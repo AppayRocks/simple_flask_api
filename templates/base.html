@@ -1,0 +1,26 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - SimpleAPp</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Simple App</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="#">Log Out</a>
+    {% else %}
+      <h1>Menu</h1>
+      <li><a href="#">Token</a>
+      <li><a href="#">User Info</a>
+      <li><a href="#">Registration</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

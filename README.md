@@ -6,7 +6,7 @@ Simple Web API using Flask
 
  ``` virtualenv --python=python3 pyenv3 ```
 
- ``` source pyenv3.7/bin/activate ```
+ ``` source pyenv3/bin/activate ```
 
  ``` pip install flask ```
  
